@@ -29,3 +29,16 @@ int print_str(char *s)
 		print_char(s[count]);
 	return (count);
 }
+
+/**
+ * print_psign - Prints percentage sign
+ *
+ * Return: int
+ */
+
+int print_psign(void)
+{
+	print_char('%');
+
+	return (1);
+}

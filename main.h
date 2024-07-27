@@ -4,6 +4,7 @@
 int _printf(const char *format, ...);
 int print_char(char c);
 int print_str(char *s);
-char *itos_convert(int num);
+int print_deci(int n);
+int print_psign(void);
 
 #endif /* ifndef MAIN_H */

@@ -6,10 +6,9 @@
  * Return: Number of numbers printed
  */
 
-char *itos_convert(int n)
+int print_deci(int n)
 {
 	unsigned int num = n;
-	char *str;
 	int count;
 
 	if (n < 0)
@@ -19,14 +18,9 @@ char *itos_convert(int n)
 	}
 	if (num / 10)
 	{
-		itos_convert(num / 10);
-		count++;
+		count = print_deci(num / 10);
 	}
-	str = malloc(sizeof(char) * 1024);
-	if (!str)
-		return (NULL);
-	for (count; count >= 0; count--)
-		str[count] = (num / 10);
+	count += print_char((num % 10) + '0');
 
-	return (str);
+	return (count);
 }
