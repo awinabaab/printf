@@ -4,9 +4,10 @@
 int main(void)
 {
 	int count;
-	count = print_deci(-43657);
+
+	count = print_int(-43657);
 	printf("\n%d\n", count);
-	count = print_deci(43657);
+	count = print_int(43657);
 	printf("\n%d\n", count);
 
 	return (0);
