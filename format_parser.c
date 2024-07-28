@@ -13,7 +13,6 @@ void format_parser(const char *format, va_list args)
 	char ch;
 	char *str;
 	int num;
-	unsigned int number;
 
 	switch (*format)
 	{
@@ -35,9 +34,6 @@ void format_parser(const char *format, va_list args)
 		case 'i':
 			num = va_arg(args, int);
 			print_deci(num);
-			break;
-		default:
-			print_str("Format not found\n");
 			break;
 	}
 }
