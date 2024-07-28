@@ -30,11 +30,11 @@ int format_parser(const char *format, va_list args)
 			break;
 		case 'd':
 			num = va_arg(args, int);
-			count = print_deci(num);
+			count = print_int(num);
 			break;
 		case 'i':
 			num = va_arg(args, int);
-			count = print_deci(num);
+			count = print_int(num);
 			break;
 	}
 	return (count);
