@@ -19,7 +19,7 @@ int print_char(char c)
  * Return: Number of characters printed
  */
 
-int print_str(char *s)
+int print_str(const char *s)
 {
 	int count;
 
