@@ -1,5 +1,5 @@
-#include <stdarg.h>
 #include "main.h"
+#include <stdarg.h>
 
 /**
  * format_parser - Parses a format string and executes the appropriate function
