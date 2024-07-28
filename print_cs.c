@@ -19,26 +19,14 @@ int print_char(char c)
  * Return: Number of characters printed
  */
 
-int print_str(const char *s)
+int print_str(char *s)
 {
 	int count;
 
+	count = 0;
 	if (!s)
-		return (0);
+		return (count);
 	for (count = 0; s[count] != '\0'; count++)
 		print_char(s[count]);
 	return (count);
-}
-
-/**
- * print_psign - Prints percentage sign
- *
- * Return: int
- */
-
-int print_psign(void)
-{
-	print_char('%');
-
-	return (1);
 }
