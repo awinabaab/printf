@@ -10,20 +10,22 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
+	int count;
 
 	va_start(args, format);
+	count = 0;
 	while (*format)
 	{
 		if (*format == '%')
 		{
 			format++;
-			format_parser(format, args);
+			count += format_parser(format, args);
 		}
 		else
-			print_char(*format);
+			count += print_char(*format);
 		format++;
 	}
 	va_end(args);
 
-	return (0);
+	return (count);
 }
