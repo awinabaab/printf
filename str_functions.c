@@ -2,8 +2,6 @@
 #include <unistd.h>
 #include <stddef.h>
 
-#define BUF_SIZE 1024
-
 /**
  * print_char - Prints a character
  * @c: Character to be printed
@@ -21,13 +19,12 @@ int print_char(char c)
  * Return: Number of characters printed
  */
 
-int print_str(char *s)
+int print_str(const char *s)
 {
 	int count;
 
-	count = 0;
 	if (!s)
-		return (count);
+		return (0);
 	for (count = 0; s[count] != '\0'; count++)
 		print_char(s[count]);
 	return (count);
