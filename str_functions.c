@@ -23,8 +23,9 @@ int print_str(char *s)
 {
 	int count;
 
+	count = 0;
 	if (!s)
-		return (0);
+		return (count);
 	for (count = 0; s[count] != '\0'; count++)
 		print_char(s[count]);
 	return (count);
