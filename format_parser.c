@@ -23,6 +23,9 @@ int format_parser(const char *format, va_list *args)
 		case 's':
 			count = print_str(va_arg(*args, char *));
 			break;
+		case 'r':
+			count = print_rev(va_arg(*args, char *));
+			break;
 		case 'd':
 			count = print_int(va_arg(*args, int));
 			break;
