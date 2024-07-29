@@ -99,7 +99,7 @@ long int _power(double base, int expo)
 }
 
 /**
- * print_unsigned - Prints unsigned integer to stdout
+ * print_u - Prints unsigned integer to stdout
  * @num: Number to be printed
  *
  * Return: Number of characters printed
