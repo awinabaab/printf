@@ -9,7 +9,7 @@
  * Return: Number of characters printed
  */
 
-int print_int(int n)
+int print_int(long int n)
 {
 	unsigned int num = n;
 	int count;
@@ -75,4 +75,46 @@ int print_hex_upper(unsigned int num)
 	} while (num > 0);
 
 	return (print_str(&buf[index + 1]));
+}
+
+/**
+ * _power - Calculates power of  an integer to another
+ * @base: Number passed as base
+ * @expo: Number passed as exponent
+ *
+ * Return: Power calculation
+ */
+
+long int _power(double base, int expo)
+{
+	if (expo < 0)
+		return (-1);
+	if (expo == 0)
+		return (1);
+	if (expo == 1)
+		return (base);
+	base *= _power(base, (expo - 1));
+
+	return (base);
+}
+
+/**
+ * print_unsigned - Prints unsigned integer to stdout
+ * @num: Number to be printed
+ *
+ * Return: Number of characters printed
+ */
+
+int print_u(int num)
+{
+	long int u_num;
+
+	if (num < 0)
+	{
+		num = -num;
+		u_num = _power(2.0, 32) - num;
+		return (print_int(u_num));
+	}
+	else
+		return (print_int(num));
 }

@@ -44,6 +44,9 @@ int format_parser(const char *format, va_list *args)
 		case 'o':
 			count = print_num_base(va_arg(*args, unsigned int), 8);
 			break;
+		case 'u':
+			count = print_u(va_arg(*args, int));
+			break;
 	}
 	return (count);
 }
