@@ -30,3 +30,21 @@ int print_str(char *s)
 		print_char(s[count]);
 	return (count);
 }
+
+/**
+ * print_rev - Prints a string in reverse
+ * @s: String to be printed
+ *
+ * Return: Pointer to reversed string
+ */
+
+int print_rev(char *s)
+{
+	int length = 0;
+
+	while (s[length] != '\0')
+		length++;
+	for (length = length - 1; s[length] != '\0'; length--)
+		print_char(s[length]);
+	return (length);
+}
