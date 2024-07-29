@@ -10,9 +10,6 @@
 
 int format_parser(const char *format, va_list *args)
 {
-	char ch;
-	char *str;
-	int num;
 	int count;
 
 	switch (*format)
@@ -21,20 +18,28 @@ int format_parser(const char *format, va_list *args)
 			count = print_char('%');
 			break;
 		case 'c':
-			ch = va_arg(*args, int);
-			count = print_char(ch);
+			count = print_char(va_arg(*args, int));
 			break;
 		case 's':
-			str = va_arg(*args, char *);
-			count = print_str(str);
+			count = print_str(va_arg(*args, char *));
 			break;
 		case 'd':
-			num = va_arg(*args, int);
-			count = print_int(num);
+			count = print_int(va_arg(*args, int));
 			break;
 		case 'i':
-			num = va_arg(*args, int);
-			count = print_int(num);
+			count = print_int(va_arg(*args, int));
+			break;
+		case 'b':
+			count = print_num_base(va_arg(*args, unsigned int), 2);
+			break;
+		case 'x':
+			count = print_num_base(va_arg(*args, unsigned int), 16);
+			break;
+		case 'X':
+			count = print_hex_upper(va_arg(*args, unsigned int));
+			break;
+		case 'o':
+			count = print_num_base(va_arg(*args, unsigned int), 8);
 			break;
 	}
 	return (count);
