@@ -13,5 +13,6 @@ int print_u(int num);
 int non_print_chars(char *str);
 int print_pointer(void *);
 int format_parser(const char *format, va_list *args);
+int custom_parser(const char *, va_list *);
 
 #endif /* ifndef MAIN_H */
