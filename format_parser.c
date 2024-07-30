@@ -72,6 +72,9 @@ int custom_parser(const char *format, va_list *args)
 		case 'r':
 			count = print_rev(va_arg(*args, char *));
 			break;
+		case 'R':
+			count = rot13(va_arg(*args, char *));
+			break;
 	}
 	return (count);
 }
