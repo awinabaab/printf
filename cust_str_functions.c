@@ -104,7 +104,7 @@ int rot13(char *s)
 	char *encoding = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	int count = 0;
 
-	str = malloc(sizeof(char) * _strlen(s));
+	str = malloc(sizeof(char) * _strlen(s) + 1);
 	if (!str)
 	{
 		return (count);
