@@ -36,8 +36,8 @@ int main(void)
     printf("Address:[%p]\n", addr);
     len = _printf("Percent:[%%]\n");
     len2 = printf("Percent:[%%]\n");
-    _printf("Len:[%d]\n", len);
-    printf("Len:[%d]\n", len2);
+    _printf("Len:[%d]\n", len2);
+    printf("Len:[%d]\n", len);
     _printf("Non-printable:[%S]\n", "Best\nSchool");
     return (0);
 }
