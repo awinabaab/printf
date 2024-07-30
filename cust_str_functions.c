@@ -38,7 +38,7 @@ int print_pointer(void *addr)
 {
 	unsigned long ptr = (unsigned long)addr;
 	int count = 0;
-	
+
 	count += print_str("0x");
 	count += print_num_base(ptr, 16);
 
