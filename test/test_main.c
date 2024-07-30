@@ -13,6 +13,7 @@ int main(void)
     int len2;
     unsigned int ui;
     void *addr;
+    int count;
 
     len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
@@ -40,24 +41,8 @@ int main(void)
     printf("Len:[%d]\n", len);
     _printf("Non-printable:[%S]\n\n\n\n", "Best\nSchool");
 
-    void *address = NULL;
-    void *add = (void*)0x1234abcd;
-    void *ad = (void*)0xffffffffffffffff;
-    void *addd = (void*)0x0;
-    void *ad1 = (void*)0x1a2b3c4d;
-
-    _printf("Address:[%p]\n", address);
-    printf("Address:[%p]\n", address);
-    _printf("Address:[%p]\n", add);
-    printf("Address:[%p]\n", add);
-    _printf("Address:[%p]\n", ad);
-    printf("Address:[%p]\n", ad);
-    _printf("Address:[%p]\n", addd);
-    printf("Address:[%p]\n", addd);
-    _printf("Address:[%p]\n", ad1);
-    printf("Address:[%p]\n", ad1);
-
-
+   count =  _printf("Unknown: [%R]\n", "ABCDabcd");
+   printf("%d\n", count);
 
     return (0);
 }
