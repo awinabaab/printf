@@ -12,9 +12,15 @@ int print_pointer(void *addr)
 	unsigned long ptr = (unsigned long)addr;
 	int count = 0;
 
-	count += print_str("0x");
-	count += ptr_hex_convert(ptr, 16);
-
+	if (!ptr)
+	{
+		count += print_str("(nil)");
+	}
+	else
+	{
+		count += print_str("0x");
+		count += ptr_hex_convert(ptr, 16);
+	}
 	return (count);
 }
 
