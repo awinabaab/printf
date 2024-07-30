@@ -26,3 +26,26 @@ int non_print_chars(char *str)
 	}
 	return (count);
 }
+
+/**
+ * print_rev - Prints a string in reverse
+ * @s: String to be printed
+ *
+ * Return: Number of characters printed
+ */
+
+int print_rev(char *s)
+{
+	int length = 0;
+	int count = 0;
+
+	while (s[length] != '\0')
+	{
+		length++;
+	}
+	for (length = length - 1; s[length] != '\0'; length--)
+	{
+		count += print_char(s[length]);
+	}
+	return (count);
+}
