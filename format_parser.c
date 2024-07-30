@@ -69,6 +69,9 @@ int custom_parser(const char *format, va_list *args)
 		case 'b':
 			count = print_num_base(va_arg(*args, unsigned int), 2);
 			break;
+		case 'r':
+			count = print_rev(va_arg(*args, char *));
+			break;
 	}
 	return (count);
 }
