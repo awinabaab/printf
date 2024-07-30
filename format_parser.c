@@ -59,7 +59,7 @@ int format_parser(const char *format, va_list *args)
 
 int custom_parser(const char *format, va_list *args)
 {
-	int count;
+	int count = 0;
 
 	switch (*format)
 	{
