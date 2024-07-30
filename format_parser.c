@@ -44,6 +44,9 @@ int format_parser(const char *format, va_list *args)
 		case 'u':
 			count = print_u(va_arg(*args, int));
 			break;
+		case 'S':
+			count = non_print_chars(va_arg(*args, char *));
+			break;
 	}
 	return (count);
 }
