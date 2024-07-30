@@ -38,6 +38,26 @@ int main(void)
     len2 = printf("Percent:[%%]\n");
     _printf("Len:[%d]\n", len2);
     printf("Len:[%d]\n", len);
-    _printf("Non-printable:[%S]\n", "Best\nSchool");
+    _printf("Non-printable:[%S]\n\n\n\n", "Best\nSchool");
+
+    void *address = NULL;
+    void *add = (void*)0x1234abcd;
+    void *ad = (void*)0xffffffffffffffff;
+    void *addd = (void*)0x0;
+    void *ad1 = (void*)0x1a2b3c4d;
+
+    _printf("Address:[%p]\n", address);
+    printf("Address:[%p]\n", address);
+    _printf("Address:[%p]\n", add);
+    printf("Address:[%p]\n", add);
+    _printf("Address:[%p]\n", ad);
+    printf("Address:[%p]\n", ad);
+    _printf("Address:[%p]\n", addd);
+    printf("Address:[%p]\n", addd);
+    _printf("Address:[%p]\n", ad1);
+    printf("Address:[%p]\n", ad1);
+
+
+
     return (0);
 }

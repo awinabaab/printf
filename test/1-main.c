@@ -27,7 +27,7 @@ int main(void)
 	count = _printf("%s %c\n", str, ch);
 	_printf("%d\n\n", count);
 
-	count = _printf("%%\n");
+	count = _printf("%%%%\n");
 	_printf("%d\n\n", count);
 
 	count = _printf("(Hello)");
