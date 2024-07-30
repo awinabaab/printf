@@ -26,21 +26,3 @@ int non_print_chars(char *str)
 	}
 	return (count);
 }
-
-/**
- * print_pointer - Prints an address
- * @addr: Pointer to be printed
- *
- * Return: Number of characters printed
- */
-
-int print_pointer(void *addr)
-{
-	unsigned long ptr = (unsigned long)addr;
-	int count = 0;
-
-	count += print_str("0x");
-	count += print_num_base(ptr, 16);
-
-	return (count);
-}
