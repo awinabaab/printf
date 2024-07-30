@@ -41,7 +41,7 @@ int main(void)
     printf("Len:[%d]\n", len);
     _printf("Non-printable:[%S]\n\n\n\n", "Best\nSchool");
 
-   count =  _printf("Unknown: [%R]\n", "ABCDabcd");
+   count =  _printf("Unknown: [%R]\n[%R]\n", "ABYcdrDbfgcd", "123");
    printf("%d\n", count);
 
     return (0);
