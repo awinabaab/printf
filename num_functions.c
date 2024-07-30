@@ -1,7 +1,5 @@
 #include "main.h"
 
-#define BUF_SIZE 1024
-
 /**
  * print_int - Convert an int to a string and write it to standard output
  * @n: Number to be converted and printed
@@ -38,7 +36,7 @@ int print_int(long int n)
  * Return: Number of characters printed
  */
 
-int print_num_base(unsigned long num, int base)
+int print_num_base(unsigned int num, int base)
 {
 	char buf[BUF_SIZE];
 	int index = BUF_SIZE - 1;
