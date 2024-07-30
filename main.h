@@ -2,11 +2,14 @@
 #define MAIN_H
 #include <stdarg.h>
 
+#define BUF_SIZE 1024
+
 int _printf(const char *format, ...);
 int print_char(char c);
 int print_str(char *s);
 int print_int(long int n);
-int print_num_base(unsigned long, int);
+int print_num_base(unsigned int, int);
+int ptr_hex_convert(unsigned long, int);
 int print_hex_upper(unsigned int);
 long int _power(double base, int expo);
 int print_u(int num);
