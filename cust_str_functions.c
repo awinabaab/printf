@@ -100,8 +100,8 @@ int rot13(char *s)
 {
 	char *str;
 	int sub, encoder;
-	char *alphabets = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	char *encoding = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char *alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char *encode = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	int count = 0;
 
 	if (!s)
@@ -116,9 +116,9 @@ int rot13(char *s)
 	{
 		for (encoder = 0; encoder < 52; encoder++)
 		{
-			if (s[sub] == alphabets[encoder])
+			if (s[sub] == alpha[encoder])
 			{
-				str[sub] = encoding[encoder];
+				str[sub] = encode[encoder];
 				count += print_char(str[sub]);
 				break;
 			}
