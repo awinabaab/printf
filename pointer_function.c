@@ -9,7 +9,7 @@
 
 int print_pointer(void *addr)
 {
-	unsigned long ptr = (unsigned long)addr;
+	long ptr = (long)addr;
 	int count = 0;
 
 	count += print_str("0x");
@@ -26,7 +26,7 @@ int print_pointer(void *addr)
  * Return: Number of characters printed
  */
 
-int ptr_hex_convert(unsigned long num, int base)
+int ptr_hex_convert(long num, int base)
 {
 	char buf[BUF_SIZE];
 	int index = BUF_SIZE - 1;
