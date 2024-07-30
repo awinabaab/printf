@@ -16,6 +16,7 @@ long int _power(double base, int expo);
 int print_u(int num);
 int non_print_chars(char *str);
 int print_pointer(void *);
+int print_rev(char *s);
 int format_parser(const char *format, va_list *args);
 int custom_parser(const char *, va_list *);
 
