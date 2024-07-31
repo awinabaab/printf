@@ -105,6 +105,7 @@ int rot13(char *s)
 	char *alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char *encode = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 	int count = 0;
+	int flag = 0;
 
 	if (!s)
 		s = "(null)";
@@ -116,15 +117,19 @@ int rot13(char *s)
 	str = _strcpy(str, s);
 	for (sub = 0; str[sub] != '\0'; sub++)
 	{
+		flag = 0;
 		for (encoder = 0; encoder < 52; encoder++)
 		{
 			if (s[sub] == alpha[encoder])
 			{
 				str[sub] = encode[encoder];
 				count += print_char(str[sub]);
+				flag = 1;
 				break;
 			}
 		}
+		if (flag == 0)
+			count += print_char(str[sub]);
 	}
 	free(str);
 	return (count);
