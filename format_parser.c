@@ -77,21 +77,26 @@ int custom_parser(const char *format, va_list *args)
 			break;
 		case 'l':
 			format++;
-			count = length_parser(format, args);
+			count = l_length_parser(format, args);
 			break;
+		case 'h':
+			format++;
+			count = h_length_parser(format, args);
+			break;
+
 	}
 	return (count);
 }
 
 /**
- * length_parser - Parses a numerical data type to its appropriate length
+ * l_length_parser - Parses a numerical data type to its appropriate length
  * @format: Format to be parsed
  * @args: Optional arguments
  *
  * Return: Number of characters printed
  */
 
-int length_parser(const char *format, va_list *args)
+int l_length_parser(const char *format, va_list *args)
 {
 	int count = 0;
 
@@ -114,6 +119,41 @@ int length_parser(const char *format, va_list *args)
 			break;
 		case 'u':
 			count = l_print_u(va_arg(*args, long int));
+			break;
+	}
+	return (count);
+}
+/**
+ * h_length_parser - Parses a numerical data type to its appropriate length
+ * @format: Format to be parsed
+ * @args: Optional arguments
+ *
+ * Return: Number of characters printed
+ */
+
+int h_length_parser(const char *format, va_list *args)
+{
+	int count = 0;
+
+	switch (*format)
+	{
+		case 'd':
+			count = h_print_int(va_arg(*args, int));
+			break;
+		case 'i':
+			count = h_print_int(va_arg(*args, int));
+			break;
+		case 'x':
+			count = h_print_num_base(va_arg(*args, int), 16);
+			break;
+		case 'X':
+			count = h_print_hex_upper(va_arg(*args, int));
+			break;
+		case 'o':
+			count = h_print_num_base(va_arg(*args, int), 8);
+			break;
+		case 'u':
+			count = h_print_u(va_arg(*args, int));
 			break;
 	}
 	return (count);
