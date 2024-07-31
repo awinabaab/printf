@@ -40,6 +40,8 @@ int print_rev(char *s)
 	int length = 0;
 	int count = 0;
 
+	if (s == NULL)
+		s = "(null)";
 	while (s[length] != '\0')
 	{
 		length++;
