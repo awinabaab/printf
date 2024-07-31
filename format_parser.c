@@ -75,6 +75,46 @@ int custom_parser(const char *format, va_list *args)
 		case 'R':
 			count = rot13(va_arg(*args, char *));
 			break;
+		case 'l':
+			format++;
+			count = length_parser(format, args);
+			break;
+	}
+	return (count);
+}
+
+/**
+ * length_parser - Parses a numerical data type to its appropriate length
+ * @format: Format to be parsed
+ * @args: Optional arguments
+ *
+ * Return: Number of characters printed
+ */
+
+int length_parser(const char *format, va_list *args)
+{
+	int count = 0;
+
+	switch (*format)
+	{
+		case 'd':
+			count = l_print_int(va_arg(*args, long int));
+			break;
+		case 'i':
+			count = l_print_int(va_arg(*args, long int));
+			break;
+		case 'x':
+			count = l_print_num_base(va_arg(*args, long int), 16);
+			break;
+		case 'X':
+			count = l_print_hex_upper(va_arg(*args, long int));
+			break;
+		case 'o':
+			count = l_print_num_base(va_arg(*args, long int), 8);
+			break;
+		case 'u':
+			count = l_print_u(va_arg(*args, long int));
+			break;
 	}
 	return (count);
 }
