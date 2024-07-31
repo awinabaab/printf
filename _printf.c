@@ -20,6 +20,8 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			count += format_parser(format, &args);
+			if (*format == 'l' || *format == 'h')
+				format++;
 		}
 		else
 			count += print_char(*format);
