@@ -105,7 +105,7 @@ int rot13(char *s)
 	int count = 0;
 
 	if (!s)
-		return (count);
+		s = "(null)";
 	str = malloc(sizeof(char) * _strlen(s) + 1);
 	if (!str)
 	{
