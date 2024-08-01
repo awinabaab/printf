@@ -25,8 +25,11 @@ int print_str(char *s)
 
 	count = 0;
 	if (!s)
-		return (count);
-	for (count = 0; s[count] != '\0'; count++)
-		print_char(s[count]);
+		s = "(null)";
+	else
+	{
+		for (count = 0; s[count] != '\0'; count++)
+			print_char(s[count]);
+	}
 	return (count);
 }
