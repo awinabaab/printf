@@ -42,13 +42,16 @@ int print_rev(char *s)
 
 	if (s == NULL)
 		s = "(null)";
-	while (s[length] != '\0')
+	else
 	{
-		length++;
-	}
-	for (length = length - 1; s[length] != '\0'; length--)
-	{
-		count += print_char(s[length]);
+		while (s[length] != '\0')
+		{
+			length++;
+		}
+		for (length = length - 1; s[length] != '\0'; length--)
+		{
+			count += print_char(s[length]);
+		}
 	}
 	return (count);
 }
